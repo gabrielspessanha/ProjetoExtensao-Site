@@ -1,0 +1,27 @@
+@media (max-width: 770px){
+  .main_titulo{
+    font-size: 1.1em;
+  }
+  #mainParagraph{
+    font-size: 1.2em;
+  }
+  .section{
+    padding: 10px 10px 30px 10px;
+
+    .text_section{
+      padding: 10%;
+    } 
+  }
+  .imagem_section{
+    padding: 0;
+    img{
+      width: 20rem;
+    }
+  }
+}
+
+@media (max-width: 520px){
+  .section{
+    @include aling-items(flex,column-reverse,none,none,10px);
+  }
+}

@@ -1,0 +1,89 @@
+
+*{
+  margin: 0;padding: 0;border: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* ---------------------- FONTES --------------------------------*/
+@font-face{
+  font-family: "sanshiro";
+  src: url("../fonts/SanshiroDisplay-Black.ttf")format('ttf');
+}
+
+/* -----------Mixin----------------------*/
+
+@mixin aling-items ($display , $flex-direction, $justfy-content, $aling-items , $gap){
+  display: $display;
+  flex-direction: $flex-direction;
+  justify-content: $justfy-content;
+  align-items: $aling-items;
+  gap: $gap;
+}
+@mixin styles ($color, $width , $heigth,$margin){
+  color: $color;
+  width: $width;
+  height: $heigth;
+  margin: $margin;
+}
+/* -----------Main container----------------------*/
+
+#main_container{
+  @include aling-items(flex,column,space-between,none,none);
+  background-color: rgb(255, 255, 255);
+  backdrop-filter: blur(20px);
+  background-size: cover;
+}
+
+/* ------Barra de navegação---------*/
+
+@import "header.scss";
+
+/* ------------Corpo do site --------------------*/
+
+#main_section{
+  @include aling-items(flex,column,center,center,0);
+  
+}
+/* ------Titulo principal ------------------*/
+
+
+.main_titulo{
+  @include aling-items(flex,row,center,center,0);
+  @include styles(rgb(250, 250, 250),100%,300px,60px);
+  font-size: 1.6em;
+  background:linear-gradient(-45deg, rgb(156, 150, 138), rgb(233, 231, 232),rgb(2, 97, 109),rgb(124, 169, 156));
+  background-size: 400% 400%;
+  animation: titleAnimation 15s ease infinite;
+
+  h1{
+    text-align: center;
+    text-shadow: 2px 3px 5px rgba(11, 66, 110, 0.857);
+  }
+}
+
+/* -------main-section --------------------*/
+
+@import "./main-section.scss";
+
+/* -------- footer -------------------*/
+
+footer{
+  @include aling-items(flex,row,center,center,0);
+  @include styles(black,none,80px, none);
+  background-image:  linear-gradient(45deg, rgba(11, 146, 209, 0.511), rgb(8, 117, 180));
+  margin-top: 30px;
+}
+
+/* -------- Keyframes -------------------*/
+
+@keyframes titleAnimation {
+	0% {
+		background-position: 0% 25%;
+	}
+	50% {
+		background-position: 100% 25%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
