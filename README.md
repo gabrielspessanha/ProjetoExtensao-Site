@@ -1,2 +1,2 @@
 # ProjetoExtensao
- Criando um site com HTML/CSS e Sass sobre cuisados basicos pra trabalhadores Home-office
+ Criando um site com HTML/CSS e Sass sobre cuidados basicos pra trabalhadores Home-office
